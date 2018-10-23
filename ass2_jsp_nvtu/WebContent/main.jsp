@@ -7,6 +7,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <table id="tableOrder" class="table table-condensed">
   <thead>
+  <c:choose>
+   <c:when test="${sessionScope.user==null}">
+       <c:redirect url="login.jsp"/>
+    </c:when>
+   </c:choose>
     <tr>
       <th>OrderId</th>
       <th>CustomerId</th>
@@ -18,6 +23,7 @@
       <th>DeliveryAdress</th>
       <th>Order Status</th>
       <th>Note</th>
+      <th><button id="btnlogout" onclick="logOut();" style="width:80px;">Logout</button></th>
     </tr>
   </thead>
   <tbody>

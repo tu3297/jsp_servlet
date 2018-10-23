@@ -8,6 +8,10 @@ import java.sql.SQLException;
 import Commom.ConnectDatabase;
 import Entity.User;
 
+/**
+ * @author: User SDP
+ * @date: Oct 23, 2018
+ */
 public class UserDao implements UserDaoImpl {
 	@Override
 	public boolean insertUser(User user) {

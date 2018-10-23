@@ -51,6 +51,15 @@ input[type=text],select {
     margin-left: 12px;
     box-sizing: border-box;
 }
+input[type=password]{
+    width: 49%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 12px;
+    box-sizing: border-box;
+}
  #loginbtn {
      margin: 2px;
      width: 49%;

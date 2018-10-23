@@ -52,6 +52,22 @@ public class OrderController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	/**
+	 * @description:insert order record into table car_order in database
+	 * @author: User SDP
+	 * @param
+	 * @exeception
+	 * @return
+	 * @date: Oct 23, 2018
+	 * @modifier: User
+	 * @modifi_date: Oct 23, 2018
+	 * @throws:
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected boolean insertOrder(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		orderService = new OrderService();
@@ -77,10 +93,25 @@ public class OrderController extends HttpServlet {
 		String deliveryAdress = request.getParameter("deliveryAdress");
 		String orderStatus = request.getParameter("orderStatus");
 		String note = request.getParameter("note");
-		order = new Order(orderId, customerId, carId, amount, salePrice, orderDate, deliveryDate, deliveryAdress,
-				orderStatus, note);
+		order = new Order(orderId, customerId, carId, amount, salePrice, orderDate, deliveryDate, deliveryAdress,orderStatus, note);
 		return orderService.insertOrder(order);
 	}
+    /**
+     * @description:update order record in table car_order in database
+     * @author: User SDP
+     * @param
+     * @exeception
+     * @return
+     * @date: Oct 23, 2018
+     * @modifier: User
+     * @modifi_date: Oct 23, 2018
+     * @throws:
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     protected boolean updateOrder(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
     	int orderId;
 		int carId;
@@ -109,6 +140,22 @@ public class OrderController extends HttpServlet {
 				orderStatus, note);
 		return orderService.updateOrder(orderId, order);
     }
+    /**
+     * @description:delete order record in table car_order in database 
+     * @author: User SDP
+     * @param
+     * @exeception
+     * @return
+     * @date: Oct 23, 2018
+     * @modifier: User
+     * @modifi_date: Oct 23, 2018
+     * @throws:
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     protected boolean deleteOrder(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
     	int orderId;
     	orderService = new OrderService();

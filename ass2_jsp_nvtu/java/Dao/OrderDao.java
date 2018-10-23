@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Commom.ConnectDatabase;
+import Commom.ConstantApplication;
 import Entity.Car;
 import Entity.Order;
 
@@ -21,7 +22,7 @@ public class OrderDao implements OrderImpl {
 		List<Order>listOrder=new ArrayList<>();
 		try {
 			connection = ConnectDatabase.getSQLServerConnection();
-			String sql="select *from Car_Order";
+			String sql=ConstantApplication.SELECT_ALL_ORDER;
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet rs=preparedStatement.executeQuery();
 			while(rs.next()){
@@ -53,7 +54,7 @@ public class OrderDao implements OrderImpl {
 		Connection connection=null;
 		try {
 			  connection=ConnectDatabase.getSQLServerConnection();
-			  String sql="insert into Car_Order values(?,?,?,?,?,?,?,?,?,?)";
+			  String sql=ConstantApplication.INSERT_ORDER;
 			  PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		      connection.setAutoCommit(false);
 		      preparedStatement.setInt(1, order.getOrderId());
@@ -82,7 +83,7 @@ public class OrderDao implements OrderImpl {
 		Connection connection=null;
 		try {
 			  connection=ConnectDatabase.getSQLServerConnection();
-			  String sql="update car_order set amount=?,saleprice=?,orderdate=?,deliverydate=?,deliveryadress=?,status=?,note=? where orderid=?";
+			  String sql=ConstantApplication.UPDATE_ORDER;
 			  PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			  connection.setAutoCommit(false);
 		      preparedStatement.setInt(1, order.getAmount());
@@ -110,7 +111,7 @@ public class OrderDao implements OrderImpl {
 		Connection connection=null;
 		try {
 			  connection=ConnectDatabase.getSQLServerConnection();
-			  String sql="delete from car_order where orderId=?";
+			  String sql=ConstantApplication.DELETE_ORDER;
 			  PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			  connection.setAutoCommit(false);
 			  preparedStatement.setInt(1, id);

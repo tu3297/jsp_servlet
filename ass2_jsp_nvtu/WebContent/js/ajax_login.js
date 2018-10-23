@@ -10,7 +10,7 @@ function sendAjaxLogin(){
         success: function (data) {
           if(data==1){
         	  alert("Bạn đã đăng nhập thành công");
-        	  window.location.assign("/ass2_jsp_nvtu/Car");
+        	  window.location.assign("/ass2_jsp_nvtu/Order");
           }
         }
     });

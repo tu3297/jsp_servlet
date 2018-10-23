@@ -74,6 +74,8 @@ function insertOrder(x){
         				               amount+'</td><td>'+salePrice+'</td><td>'+orderDate+'</td><td>'+
         				               deliveryDate+'</td><td>'+deliveryAdress+'</td><td>'+orderStatus+'</td><td>'
         				               +'</td><td>'+note+'</td></tr>');
+        	}else{
+        		alert("Nhập sai định dạng mời nhập lại");
         	}
         }
     });   
@@ -161,6 +163,8 @@ function updateOrders(){
         	            }
         	        // do something with productId, product, Quantity
         	    });
+        	}else{
+        		alert("Lỗi,kiểm tra lại thông tin");
         	}	
         }
     });   
@@ -191,4 +195,20 @@ function deleteOrder(params){
 	             }
 	        }
 	    });   
+}
+function logOut(){
+	var cmd="logOut";
+	$.ajax({
+        url: "user",
+        type: 'Post',
+        data: {
+        	type:cmd
+        },
+        success: function (data) {
+        	if(data==1){
+        		alert("LogOut Success");
+        		window.location.assign("login.jsp");
+             }
+        }
+    });   
 }
