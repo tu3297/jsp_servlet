@@ -33,5 +33,23 @@ public class OrderService  implements OrderServiceImpl{
 		oderDao=new OrderDao();
 		return oderDao.deleteOrder(id);
 	}
+  /* (non-Javadoc)
+   * @see Service.OrderServiceImpl#getNumberOfOrderRows()
+   */
+  @Override
+  public int getNumberOfOrderRows() {
+    // TODO Auto-generated method stub
+    oderDao=new OrderDao();
+    return oderDao.getNumberOfOrderRows();
+  }
+  /* (non-Javadoc)
+   * @see Service.OrderServiceImpl#findCountriesOrPrevious(int, int)
+   */
+  @Override
+  public List<Order> findCountriesOrPrevious(int currentPage, int numberOfPage) {
+    // TODO Auto-generated method stub
+    oderDao=new OrderDao();
+    return oderDao.findCountriesOrPrevious(currentPage, numberOfPage);
+  }
 
 }

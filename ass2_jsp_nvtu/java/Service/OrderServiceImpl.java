@@ -9,4 +9,6 @@ public interface OrderServiceImpl {
    boolean insertOrder(Order order);
    boolean updateOrder(int id,Order order);
    boolean deleteOrder(int id);
+   int getNumberOfOrderRows();
+   List<Order> findCountriesOrPrevious(int currentPage,int numberOfPage);
 }

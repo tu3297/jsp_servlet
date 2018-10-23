@@ -41,11 +41,21 @@ public class OrderController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	  
 		orderService = new OrderService();
+		/*
 		List<Order> listOrder = new ArrayList<>();
 		listOrder = orderService.getAllOrder();
 		request.setAttribute("listOrder", listOrder);
 		request.getRequestDispatcher("main.jsp").forward(request, response);
+		*/
+		int currentPage=Integer.parseInt(request.getParameter("currentpage"));
+		int numberOfPage=Integer.parseInt(request.getParameter("numberofpage"));
+		List<Order> listOrder=orderService.findCountriesOrPrevious(currentPage, numberOfPage);
+		request.setAttribute("listOrder", listOrder);
+		int rows=orderService.getNumberOfOrderRows();
+		
+		
 	}
 
 	/**
