@@ -18,7 +18,10 @@ public class OrderDao implements OrderImpl {
   public static final String DELETE_ORDER            = "delete from car_order where orderId=?";
   public static final String UPDATE_ORDER            = "update car_order set amount=?,saleprice=?,orderdate=?,deliverydate=?,deliveryadress=?,status=?,note=? where orderid=?";
   public static final String GET_NUMBER_OF_ORDER_ROW = "select count(*) from car_order";
-  public static final String GET_ORDER_LIMITOFFSET="select *from car_order limit=?,offset=?";
+  public static final String GET_ORDER_LIMITOFFSET="SELECT * FROM car_order" + 
+                                                    "ORDER BY orderid" + 
+                                                     "OFFSET ? ROWS" + 
+                                                     "FETCH NEXT ? ROWS ONLY;";
 
   @Override
   public List<Order> getAllOrder() {
