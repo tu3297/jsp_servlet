@@ -10,11 +10,6 @@
 	<link rel="stylesheet" href="css/main.css">
 	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<c:choose>
-   <c:when test="${sessionScope.user!= null}">
-      <c:redirect url="Order"/>
-    </c:when>
-</c:choose>
 <body>
 	  <div class="wrapper">
          <div class="header">
