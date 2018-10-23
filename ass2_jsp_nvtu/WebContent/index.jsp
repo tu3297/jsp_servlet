@@ -32,7 +32,7 @@
                          <button  type="button" class="btn_check" onclick="check1();">Check</button>
                      </div>
                      <br>
-                     <input type="text" id="pass" name="password" placeholder="Mật khẩu..."" >
+                     <input type="text" id="pass" name="password" placeholder="Mật khẩu..." >
                      <br>
                     <button id="register" type="button" value="Đăng kí" onclick="sendAjax();">Đăng Kí</button>
             </div>

@@ -15,3 +15,6 @@ function sendAjaxLogin(){
         }
     });
 }
+$('.register').click(function(){
+	 window.location.href='index.jsp';
+});

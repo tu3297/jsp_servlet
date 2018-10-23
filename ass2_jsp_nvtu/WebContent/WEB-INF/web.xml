@@ -8,11 +8,11 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	<filter>
-		<filter-name>LoginFilter</filter-name> 
+		<filter-name>LoginFilterOrder</filter-name> 
 		<filter-class>Filter.LoginFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>LoginFilter</filter-name> 
+		<filter-name>LoginFilterOrder</filter-name> 
 		<url-pattern>/Order</url-pattern> 
-	</filter-mapping> 
+	</filter-mapping>
 </web-app>

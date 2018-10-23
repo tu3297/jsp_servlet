@@ -24,6 +24,7 @@
                      <input type="text" id="email1" name="email" placeholder="Email">
                      <input type="password" id="pass1" name="password" placeholder="Password">
                      <button id="loginbtn" type="button" value="Đăng Nhập" onclick="sendAjaxLogin();">Đăng nhập</button>
+                     <button id="loginbtn" class="register" type="button" value="Đăng Ký">Đăng Ký</button>
             
             </div>
         </div>
